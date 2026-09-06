@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ikhsan — Portofolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#home" class="brand" onclick="showSection('home')">ikhsan</a>
+
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active" onclick="showSection('home')">Home</a></li>
+      <li><a href="#projeck" class="nav-link" onclick="showSection('projeck')">projeck</a></li>
+      <li><a href="#kontak" class="nav-link" onclick="showSection('kontak')">kontak</a></li>
+    </ul>
+
+    <div class="socials">
+      <a href="https://instagram.com/username_kamu" target="_blank" aria-label="Instagram">ig</a>
+      <a href="https://x.com/username_kamu" target="_blank" aria-label="Twitter">𝕏</a>
+    </div>
+  </nav>
+
+  <!-- Section Home -->
+  <section id="home" class="content-section">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>ikhsan</h1>
+        <p class="intro">
+          Saya seorang mahasiswa Teknik Komputer yang membangun antarmuka yang rapi dan produk digital yang enak dipakai.
+        </p>
+        <button class="btn-primary" onclick="showSection('projeck')">Mari mulai &gt;</button>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/profile.jpeg" alt="Ikhsan Profile" onerror="this.parentElement.classList.add('no-photo')">
+      </div>
+    </div>
+    <div class="footer-note">
+      <p>Pernah bekerja sama dengan</p>
+    </div>
+  </section>
+
+  <!-- Section Projeck -->
+  <section id="projeck" class="content-section" style="display: none;">
+    <div class="container">
+      <h2>Projeck Saya</h2>
+      <p>Berikut adalah beberapa projek digital dan antarmuka yang telah saya buat:</p>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Projeck 1</h3>
+          <p>Deskripsi singkat mengenai sistem atau antarmuka yang dibuat.</p>
+        </div>
+        <div class="project-card">
+          <h3>Projeck 2</h3>
+          <p>Deskripsi singkat mengenai projek kedua kamu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Kontak -->
+  <section id="kontak" class="content-section" style="display: none;">
+    <div class="container">
+      <h2>Kontak Saya</h2>
+      <p>Jika ingin berdiskusi atau bekerja sama, silakan hubungi saya melalui:</p>
+      <div class="contact-details">
+        <p><strong>Email:</strong> ikhsan@example.com</p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/username_kamu" target="_blank">@username_kamu</a></p>
+        <p><strong>Twitter / X:</strong> <a href="https://x.com/username_kamu" target="_blank">@username_kamu</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
