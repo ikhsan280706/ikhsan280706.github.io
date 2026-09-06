@@ -17,11 +17,13 @@
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
 }
 
-h1, h2, h3 {
-  font-family: 'Space Grotesk', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
 }
 
 /* ===== Navbar ===== */
@@ -35,7 +37,7 @@ nav {
 }
 
 .brand {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--text);
@@ -160,7 +162,7 @@ nav {
   background-color: var(--blue);
   color: #05070d;
   border: none;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
   font-size: 1rem;
   border-radius: 6px;
@@ -180,7 +182,12 @@ nav {
   height: 280px;
   border-radius: 50%;
   padding: 6px;
-  background: conic-gradient(from 180deg, var(--blue), transparent 60%, var(--blue));
+  background: conic-gradient(
+    from 180deg,
+    var(--blue),
+    transparent 60%,
+    var(--blue)
+  );
 }
 
 .hero-image img {
@@ -206,7 +213,7 @@ nav {
 
 .hero-image.no-photo::after {
   content: "Foto Kamu";
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   color: var(--text-muted);
   font-size: 0.9rem;
 }
