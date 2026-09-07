@@ -1,207 +1,185 @@
 :root {
-  --bg: #060a13;
-  --bg-panel: #0b1120;
-  --border: #1a2436;
-  --text: #f2f5fb;
-  --text-muted: #8892a6;
-  --blue: #3d7fff;
-  --blue-soft: rgba(61, 127, 255, 0.15);
+  --bg: #12141a;
+  --bg-raised: #1a1d24;
+  --border: #2a2e37;
+  --text: #edeae3;
+  --text-muted: #8b8f98;
+  --accent: #e0a458;
+  --accent-soft: rgba(224, 164, 88, 0.14);
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: var(--bg);
+  margin: 0;
+  background: var(--bg);
   color: var(--text);
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-display);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Space Grotesk", sans-serif;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* ===== Navbar ===== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Navbar */
 nav {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  padding: 24px 6%;
-  background-color: var(--bg-panel);
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 48px;
   border-bottom: 1px solid var(--border);
 }
 
 .brand {
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--text);
-  text-decoration: none;
-  justify-self: start;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   list-style: none;
-  justify-self: center;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
 }
 
 .nav-link {
-  position: relative;
   color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.9rem;
   padding-bottom: 4px;
-  transition: color 0.2s ease;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--blue);
-  transition: width 0.2s ease;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .nav-link:hover {
   color: var(--text);
 }
 
-.nav-link:hover::after {
-  width: 100%;
-}
-
 .nav-link.active {
-  color: var(--text);
-}
-
-.nav-link.active::after {
-  width: 100%;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .socials {
   display: flex;
-  gap: 18px;
-  justify-self: end;
-}
-
-.socials a {
-  color: var(--text-muted);
-  text-decoration: none;
+  gap: 16px;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 .socials a:hover {
-  color: var(--blue);
+  color: var(--accent);
 }
 
-/* ===== Section wrapper ===== */
+/* Sections */
 .content-section {
   min-height: calc(100vh - 73px);
-  padding: 80px 6%;
-  max-width: 1280px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 48px;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 720px;
+  margin: 64px auto;
+  width: 100%;
 }
 
-.container h2 {
-  font-size: 2rem;
-  margin-bottom: 16px;
+.eyebrow-plain {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin: 0 0 12px;
 }
 
-.container > p {
-  color: var(--text-muted);
-  margin-bottom: 40px;
-}
-
-/* ===== Hero (Home) ===== */
+/* Hero */
 .hero {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 64px;
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 64px 0;
 }
 
 .hero-text {
-  max-width: 560px;
+  max-width: 480px;
 }
 
 .hero-text h1 {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  line-height: 1.1;
-  margin-bottom: 24px;
-  text-transform: capitalize;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  letter-spacing: -0.01em;
 }
 
 .intro {
   color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.7;
-  max-width: 60ch;
-  margin-bottom: 36px;
+  font-size: 1.05rem;
+  margin: 0 0 32px;
+  max-width: 42ch;
 }
 
 .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  background-color: var(--blue);
-  color: #05070d;
-  border: none;
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 12px 22px;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
-  box-shadow: 0 0 24px var(--blue-soft);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 32px rgba(61, 127, 255, 0.3);
+  box-shadow: 0 8px 20px var(--accent-soft);
 }
 
 .hero-image {
+  width: 260px;
+  height: 260px;
   flex-shrink: 0;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  padding: 6px;
-  background: conic-gradient(
-    from 180deg,
-    var(--blue),
-    transparent 60%,
-    var(--blue)
-  );
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
   display: block;
-  background-color: var(--bg-panel);
 }
 
 .hero-image.no-photo {
-  background: var(--bg-panel);
-  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,96 +190,89 @@ nav {
 }
 
 .hero-image.no-photo::after {
-  content: "Foto Kamu";
-  font-family: "Space Grotesk", sans-serif;
+  content: "ikhsan";
+  font-family: var(--font-mono);
   color: var(--text-muted);
   font-size: 0.9rem;
 }
 
-.footer-note {
-  margin-top: 80px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+/* Section headings */
+h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin: 0 0 16px;
 }
 
-/* ===== Projeck ===== */
+.section-lead {
+  color: var(--text-muted);
+  max-width: 55ch;
+  margin: 0 0 40px;
+}
+
+/* Project grid */
 .project-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
 }
 
 .project-card {
-  width: 280px;
-  padding: 24px;
   border: 1px solid var(--border);
+  background: var(--bg-raised);
   border-radius: 10px;
-  background-color: var(--bg-panel);
-  transition: border-color 0.2s ease;
-}
-
-.project-card:hover {
-  border-color: var(--blue);
+  padding: 24px;
 }
 
 .project-card h3 {
-  margin-bottom: 10px;
+  margin: 0 0 8px;
+  font-size: 1.1rem;
 }
 
 .project-card p {
+  margin: 0;
   color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-/* ===== Kontak ===== */
-.contact-details p {
-  margin-bottom: 14px;
-  color: var(--text-muted);
+/* Contact */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
 }
 
 .contact-details strong {
-  color: var(--text);
-}
-
-.contact-details a {
-  color: var(--blue);
-  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-right: 8px;
 }
 
 .contact-details a:hover {
-  text-decoration: underline;
+  color: var(--accent);
 }
 
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 720px) {
   nav {
-    grid-template-columns: 1fr auto;
-    row-gap: 16px;
+    flex-wrap: wrap;
+    padding: 16px 24px;
+    gap: 12px;
   }
 
-  .nav-links {
-    grid-column: 1 / -1;
-    justify-self: center;
+  .content-section {
+    padding: 0 24px;
   }
 
   .hero {
+    flex-direction: column-reverse;
     text-align: center;
-    justify-content: center;
+    padding: 40px 0;
   }
 
   .hero-text {
-    order: 2;
-  }
-
-  .hero-image {
-    order: 1;
-    width: 200px;
-    height: 200px;
-  }
-
-  .btn-primary {
-    margin: 0 auto;
+    max-width: 100%;
   }
 
   .intro {
@@ -309,7 +280,17 @@ nav {
     margin-right: auto;
   }
 
-  .project-card {
-    width: 100%;
+  .hero-image {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn-primary {
+    transition: none;
   }
 }
