@@ -1,11 +1,11 @@
 :root {
-  --bg: #12141a;
-  --bg-raised: #1a1d24;
-  --border: #2a2e37;
-  --text: #edeae3;
-  --text-muted: #8b8f98;
-  --accent: #e0a458;
-  --accent-soft: rgba(224, 164, 88, 0.14);
+  --bg: #050914;
+  --bg-raised: #0b1425;
+  --border: #1b3558;
+  --text: #e8f3ff;
+  --text-muted: #91a9c5;
+  --accent: #55b8ff;
+  --accent-soft: rgba(46, 151, 255, 0.2);
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
@@ -20,7 +20,14 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(1px 1px at 8% 18%, #b9ddff 99%, transparent),
+    radial-gradient(1px 1px at 76% 12%, #b9ddff 99%, transparent),
+    radial-gradient(1.5px 1.5px at 91% 68%, #b9ddff 99%, transparent),
+    radial-gradient(1px 1px at 24% 82%, #b9ddff 99%, transparent),
+    radial-gradient(1px 1px at 48% 44%, #b9ddff 99%, transparent),
+    radial-gradient(ellipse at 50% 45%, #0b1b34 0%, var(--bg) 68%);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-display);
   line-height: 1.5;
@@ -46,6 +53,8 @@ nav {
   gap: 24px;
   padding: 20px 48px;
   border-bottom: 1px solid var(--border);
+  background: rgba(5, 9, 20, 0.82);
+  backdrop-filter: blur(14px);
 }
 
 .brand {
@@ -53,6 +62,8 @@ nav {
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.02em;
+  color: var(--accent);
+  text-shadow: 0 0 18px var(--accent-soft);
 }
 
 .nav-links {
@@ -164,7 +175,7 @@ nav {
 
 .skill-card {
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 10px 12px;
   background: var(--bg-raised);
   font-family: var(--font-mono);
@@ -225,14 +236,69 @@ nav {
   box-shadow: 0 8px 20px var(--accent-soft);
 }
 
+.slide-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.slide-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 9px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.slide-button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.slide-button.next {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 22px var(--accent-soft);
+}
+
+.slide-button.next:hover {
+  color: var(--bg);
+  box-shadow: 0 0 30px var(--accent-soft);
+}
+
+.slide-button.is-disabled {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
 .hero-image {
+  position: relative;
   width: 260px;
   height: 260px;
   flex-shrink: 0;
-  border-radius: 12px;
+  border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--bg-raised);
+  border: 2px solid #368fe0;
+  background: radial-gradient(circle at 50% 40%, #17365a, #07101f 70%);
+  box-shadow: 0 0 0 10px rgba(39, 132, 220, 0.08), 0 0 45px rgba(46, 151, 255, 0.25);
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: -17px;
+  border: 1px dashed rgba(85, 184, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .hero-image img {
@@ -284,6 +350,7 @@ h2 {
   background: var(--bg-raised);
   border-radius: 10px;
   padding: 24px;
+  box-shadow: inset 0 1px rgba(85, 184, 255, 0.08), 0 12px 36px rgba(0, 0, 0, 0.18);
 }
 
 .project-card h3 {
