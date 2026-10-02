@@ -1,60 +1,144 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeck — ikhsan</title>
+
+    <title>Project — ikhsan</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- Navbar -->
     <nav>
       <a href="index.html" class="brand">ikhsan</a>
 
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link active">projeck</a></li>
-        <li><a href="contact.html" class="nav-link">kontak</a></li>
+        <li>
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html" class="nav-link active">project</a>
+        </li>
+
+        <li>
+          <a href="contact.html" class="nav-link">kontak</a>
+        </li>
       </ul>
 
       <div class="socials">
         <a
           href="https://instagram.com/_ikhsan.28"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="Instagram"
-          >ig</a
         >
-        <a href="https://x.com/ikhsan28" target="_blank" aria-label="Twitter"
-          >𝕏</a
+          ig
+        </a>
+
+        <a
+          href="https://x.com/ikhsan28"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Twitter"
         >
+          𝕏
+        </a>
       </div>
     </nav>
 
-    <!-- Section Projeck -->
-    <section id="projeck" class="content-section">
+    <!-- Section Project -->
+    <section id="project" class="content-section">
       <div class="container">
+
         <p class="eyebrow-plain">Karya</p>
-        <h2>Projeck Saya</h2>
+
+        <h2>Project Saya</h2>
+
         <p class="section-lead">
           Berikut adalah beberapa projek digital dan antarmuka yang telah saya
           buat.
         </p>
 
+
+        <!-- Project Grid -->
         <div class="project-grid">
+
+          <!-- AstroStudent -->
           <div class="project-card">
-            <h3>Projeck 1</h3>
-            <p>Deskripsi singkat mengenai sistem atau antarmuka yang dibuat.</p>
+
+            <!-- Gambar Project -->
+            <div class="project-image">
+              <img
+                src="assets/astrostudent.png"
+                alt="AstroStudent - Aplikasi Pengeluaran Mahasiswa"
+              />
+            </div>
+
+
+            <!-- Informasi Project -->
+            <div class="project-content">
+
+              <p class="project-number">01 / WEB APP</p>
+
+              <h3>AstroStudent 🚀</h3>
+
+              <p>
+                Aplikasi pengelolaan keuangan mahasiswa untuk mencatat
+                pengeluaran, mengelola dompet mahasiswa, melihat grafik
+                analisis keuangan, dan mengeksplorasi kos.
+              </p>
+
+
+              <!-- Teknologi -->
+              <div class="project-tech">
+
+                <span>React</span>
+
+                <span>Tailwind CSS</span>
+
+                <span>Framer Motion</span>
+
+                <span>Recharts</span>
+
+              </div>
+
+
+              <!-- Link Project -->
+              <div class="project-links">
+
+                <a
+                  href="https://5f0d26fd.webpengelolakeuanganmahasiswakedua.pages.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Cloudflare ↗
+                </a>
+
+              </div>
+
+            </div>
+
           </div>
+
         </div>
+
       </div>
     </section>
+
 
     <script src="script.js"></script>
   </body>
 </html>
+```
